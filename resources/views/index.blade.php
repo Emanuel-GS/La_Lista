@@ -1,8 +1,6 @@
 @extends('layouts.master')
 
-@section('content')  
-
-
+@section('content')   
     <div class="jumbotron ">
         <div class="container text-center">
             <h3 class="font-weight-light " >Me interesa</h3> 
