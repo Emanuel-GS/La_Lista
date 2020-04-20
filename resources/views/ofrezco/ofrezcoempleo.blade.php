@@ -4,10 +4,26 @@
 
 
 <div class="row">
-    <div class="col-8">
-        <h3 class="font-weight-light ">Los empleos que ofrezco</h3>
+    <div class="col-6">
+        <h3 class="font-weight-light text-center">Los empleos que ofrezco</h3>
         <div>
-            <table class="table">
+            @foreach ($o_empleos as $empleo)
+            <div class="card text-center">
+                <div class="card-header">
+                    {{$empleo->user_id}}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{$empleo->titulo}}</h5>
+                    <p class="card-text">{{$empleo->descripcion}}</p>
+                    <a href="#" class="btn btn-primary">Ver Detalles</a>
+                </div>
+                <div class="card-footer text-muted">
+                     2 days ago
+                </div>
+            </div>
+            @endforeach
+
+            <!-- <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -41,11 +57,12 @@
                     </tr>
                     @endforeach
                 </tbody>
-            </table>
+            </table> -->
             {{$o_empleos->links()}}
         </div>
     </div>
-    <div class="col-4">
+    <div class="col-6">
+        <h3 class="font-weight-light text-center">Crear nueva oferta de empleo</h3>
         <!-- Mensaje Create correcto -->
         @if(session('empleo_agregado'))
         <div class="alert alert-success">
